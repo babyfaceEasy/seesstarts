@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>List</title>
+</head>
+<body>
+    <h1>Bio Data</h1>
+    <ul>
+    {% for biodata in object_list %}
+        <li>{{ biodata.name}} - {{ biodata.email_address }}</li>
+    {% empty %}
+        <li>No data yet.</li>
+    {% endfor %}
+    </ul>
+</body>
+</html>

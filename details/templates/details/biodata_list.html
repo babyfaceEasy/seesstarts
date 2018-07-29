@@ -1,0 +1,40 @@
+{% extends "details/layout.html" %}
+
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <h1>Users Details</h1>
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+            {% if object_list %}
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for user in object_list %}
+                <tr>
+                    <td>{{ user.name }}</td>
+                    <td>{{ user.email_address }}</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            {% else %}
+            <p>No users added yet.</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "details/layout.html" %}
+
+{% block content %}
+
+
+
+<div class="row">
+    <div class="col-md-12">
+        <h1>You are welcome!!!</h1>
+        <p>Please enter any of the button below to add or view users in the system</p>
+           <p>
+              <a href="{% url 'biodata-list' %}" class="btn btn-success btn-lg">
+                List users
+              </a>
+              <a href="{% url 'biodata-create' %}" class="btn btn-success btn-lg">
+                Add user
+              </a>
+           </p>
+    </div>
+</div>
+
+{% endblock %}
